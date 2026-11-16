@@ -5,46 +5,246 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Islam & Radwa | Wedding Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
 <style>
-:root{--gold:#d5b477}
-*{box-sizing:border-box}
-body{margin:0;background:#1c1015;color:#f8eee6;font-family:Georgia,serif;text-align:center}
-button,input,textarea,select{font:inherit}
-button{cursor:pointer}
-#intro,.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(#210d17b5,#210d17e8),radial-gradient(ellipse,#85364f,#210d17 75%)}
-.small{letter-spacing:5px;color:var(--gold);text-transform:uppercase}
-.names{font-size:clamp(48px,11vw,88px);color:var(--gold);font-style:italic;margin:22px 0}
-.open-btn,.gold-btn{border:1px solid var(--gold);background:var(--gold);color:#351321;padding:14px 25px;border-radius:30px;margin-top:20px}
-#invitation{display:none}
-.hero h1{color:var(--gold);font-size:clamp(44px,10vw,78px);font-style:italic;font-weight:normal}
-.ornament{color:var(--gold);font-size:30px;margin:15px}
-.section{padding:60px 20px;max-width:850px;margin:auto}
-.section h2{color:var(--gold);font-size:34px;font-style:italic;font-weight:normal}
-.line{width:75px;height:1px;background:var(--gold);margin:22px auto}
-.date{font-size:24px;color:var(--gold)}
-.countdown{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:30px auto}
-.timebox{border:1px solid #a77b65;padding:15px;min-width:75px;border-radius:8px}
-.timebox strong{display:block;font-size:26px;color:var(--gold)}
-.timebox span{font-size:11px}
-.venue{border:1px solid #805267;padding:30px 20px;border-radius:12px;background:#ffffff08}
-.venue h3{color:var(--gold);font-size:25px;font-weight:normal}
-a{color:var(--gold)}
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.gallery img{width:100%;height:220px;object-fit:cover;border-radius:8px}
-#guestbook{width:100%;max-width:500px;margin:auto}
-#guestbook input,#guestbook textarea,#editor input,#editor textarea,#editor select{width:100%;padding:13px;margin:7px 0;background:#291720;border:1px solid #795364;color:white;border-radius:6px}
-#guestbook textarea,#editor textarea{min-height:90px}
-.message{border-bottom:1px solid #674353;padding:15px;text-align:left}
-footer{padding:40px 15px;color:var(--gold)}
-#settings{position:fixed;right:12px;bottom:12px;background:var(--gold);color:#321321;border:0;border-radius:50%;width:48px;height:48px;font-size:21px;z-index:10}
-#editor{display:none;position:fixed;inset:0;z-index:20;background:#1c1015;overflow:auto;padding:25px;text-align:left}
-#editor h2,#editor label{color:var(--gold)}
-#editor label{display:block;margin-top:12px}
+:root {
+  --bg: #241016;
+  --burgundy: #501d30;
+  --gold: #d5b477;
+  --cream: #f8ead5;
+  --card: #321720;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  text-align: center;
+}
+
+button, input, textarea { font: inherit; }
+
+button {
+  cursor: pointer;
+}
+
+.hidden { display: none !important; }
+
+/* OPENING SCREEN */
+
+#intro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background:
+    linear-gradient(#210c16aa,#210c16cc),
+    url('images/cover.jpg') center/cover no-repeat;
+}
+
+.intro-frame {
+  border: 1px solid var(--gold);
+  outline: 1px solid #d5b47766;
+  outline-offset: 9px;
+  padding: 55px 25px;
+  max-width: 520px;
+  width: 100%;
+  animation: fadeIn 2s ease;
+}
+
+.small-title {
+  letter-spacing: 7px;
+  color: var(--gold);
+  font-size: 13px;
+}
+
+.script {
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold);
+  font-size: clamp(48px, 10vw, 76px);
+  margin: 25px 0;
+}
+
+.open-btn {
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--cream);
+  padding: 14px 35px;
+  letter-spacing: 4px;
+  margin-top: 20px;
+  transition: .3s;
+}
+
+.open-btn:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* MAIN INVITATION */
+
+#invitation {
+  animation: fadeIn 1.5s ease;
+}
+
+.hero {
+  min-height: 85vh;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background:
+    linear-gradient(#200b15aa,#200b15bb),
+    url('images/main.jpg') center/cover no-repeat;
+}
+
+.hero h1 {
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold);
+  font-size: clamp(55px, 12vw, 95px);
+  margin: 20px 0;
+  font-weight: 400;
+}
+
+.hero p {
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.gold-line {
+  width: 90px;
+  height: 1px;
+  background: var(--gold);
+  margin: 25px auto;
+}
+
+section {
+  padding: 65px 20px;
+}
+
+.section-title {
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold);
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.subtitle {
+  letter-spacing: 3px;
+  color: var(--gold);
+  font-size: 13px;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.count-box {
+  border: 1px solid var(--gold);
+  min-width: 75px;
+  padding: 15px 10px;
+  background: var(--card);
+}
+
+.count-box strong {
+  display: block;
+  color: var(--gold);
+  font-size: 30px;
+}
+
+.count-box span {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* CALENDAR */
+
+.calendar {
+  max-width: 350px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid var(--gold);
+  background: var(--card);
+}
+
+.calendar h3 {
+  color: var(--gold);
+  letter-spacing: 4px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 7px;
+}
+
+.calendar-grid span {
+  padding: 8px 0;
+  font-size: 15px;
+}
+
+.calendar-grid .day-name {
+  color: var(--gold);
+}
+
+.wedding-day {
+  color: white;
+  background: var(--burgundy);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  position: relative;
+}
+
+/* LOCATION */
+
+.location-card {
+  max-width: 500px;
+  margin: auto;
+  padding: 35px 20px;
+  border: 1px solid var(--gold);
+  background: var(--card);
+}
+
+.location-card h3 {
+  color: var(--gold);
+  font-size: 27px;
+}
+
+.location-btn {
+  display: inline-block;
+  margin: 20px 5px 0;
+  padding: 12px 25px;
+  color: var(--cream);
+  border: 1px solid var(--gold);
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+/* GALLERY */
+
 .gallery {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
   padding: 10px;
+  max-width: 850px;
+  margin: auto;
 }
 
 .gallery img {
@@ -55,201 +255,538 @@ footer{padding:40px 15px;color:var(--gold)}
   object-fit: contain;
   object-position: center;
   border-radius: 12px;
-  border: 1px solid #d5b477;
+  border: 1px solid var(--gold);
   background: #1c1015;
+  transition: transform .5s ease;
 }
-</style>
+
+.gallery img:hover {
+  transform: scale(1.015);
+}
+
+/* RSVP & GUESTBOOK */
+
+.form-card {
+  max-width: 480px;
+  margin: 25px auto;
+  padding: 25px;
+  border: 1px solid var(--gold);
+  background: var(--card);
+}
+
+.form-card input,
+.form-card textarea,
+.form-card select {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  padding: 13px;
+  color: var(--cream);
+  background: var(--bg);
+  border: 1px solid #a8875b;
+  outline: none;
+}
+
+.form-card button {
+  padding: 12px 30px;
+  color: var(--bg);
+  background: var(--gold);
+  border: none;
+  letter-spacing: 2px;
+}
+
+.messages {
+  max-width: 480px;
+  margin: 25px auto;
+  text-align: left;
+}
+
+.message {
+  padding: 15px;
+  margin: 10px 0;
+  border-left: 2px solid var(--gold);
+  background: var(--card);
+}
+
+footer {
+  padding: 45px 20px;
+  color: var(--gold);
+}
+
+.admin-open {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: #4c2634;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  z-index: 20;
+}
+
+#adminPanel {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  overflow-y: auto;
+  background: #211018;
+  padding: 25px;
+  text-align: left;
+}
+
+#adminPanel h2 {
+  color: var(--gold);
+}
+
+#adminPanel input,
+#adminPanel select {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: var(--card);
+  color: white;
+  border: 1px solid var(--gold);
+}
+
+.admin-group {
+  max-width: 550px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #a8875b;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-actions button {
+  padding: 12px;
+  background: var(--gold);
+  border: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width:500px) {
+  section { padding: 45px 15px; }
+  .intro-frame { padding: 40px 15px; }
+}
 </style>
 </head>
+
 <body>
+
+<!-- MUSIC -->
+<audio id="music" src="music/song.mp3" loop></audio>
+
+<!-- OPENING -->
 <div id="intro">
-<div class="small">Together with our families</div>
-<div class="ornament">✦</div>
-<div class="names">Islam & Radwa</div>
-<p>WE INVITE YOU TO CELEBRATE OUR WEDDING</p>
-<div class="ornament">♡</div>
-<button class="open-btn" onclick="openInvitation()">OPEN INVITATION</button>
+  <div class="intro-frame">
+    <div class="small-title">YOU ARE INVITED TO CELEBRATE</div>
+    <div class="script">Islam & Radwa</div>
+    <div class="gold-line"></div>
+    <p>TOGETHER WITH THEIR FAMILIES</p>
+    <p>REQUEST THE PLEASURE OF YOUR COMPANY</p>
+    <button class="open-btn" onclick="openInvitation()">
+      OPEN INVITATION
+    </button>
+  </div>
 </div>
 
-<div id="invitation">
-<section class="hero">
-<div class="small">A celebration of love</div>
-<div class="ornament">✧</div>
-<h1>Islam & Radwa</h1>
-<p>ARE GETTING MARRIED</p>
-<div class="ornament">♡</div>
-<p>We would be honored to have you with us</p>
-</section>
+<!-- INVITATION -->
+<main id="invitation" class="hidden">
 
-<section class="section">
-<div class="ornament">✦</div>
-<h2>Our Special Day</h2>
-<div class="line"></div>
-<p class="date" id="dateText">Our Wedding Day</p>
-<div class="countdown">
-<div class="timebox"><strong id="days">--</strong><span>DAYS</span></div>
-<div class="timebox"><strong id="hours">--</strong><span>HOURS</span></div>
-<div class="timebox"><strong id="minutes">--</strong><span>MINUTES</span></div>
-<div class="timebox"><strong id="seconds">--</strong><span>SECONDS</span></div>
+  <div class="hero">
+    <div class="small-title">THE WEDDING CELEBRATION</div>
+    <h1>Islam & Radwa</h1>
+    <div class="gold-line"></div>
+    <p>14 · 12 · 2026</p>
+    <p>MONDAY | 6:00 PM</p>
+  </div>
+
+  <section>
+    <div class="subtitle">A BEAUTIFUL BEGINNING</div>
+    <h2 class="section-title">Save The Date</h2>
+    <p>We would love to have you with us on our special day.</p>
+
+    <div class="countdown">
+      <div class="count-box">
+        <strong id="days">00</strong>
+        <span>DAYS</span>
+      </div>
+      <div class="count-box">
+        <strong id="hours">00</strong>
+        <span>HOURS</span>
+      </div>
+      <div class="count-box">
+        <strong id="minutes">00</strong>
+        <span>MINUTES</span>
+      </div>
+      <div class="count-box">
+        <strong id="seconds">00</strong>
+        <span>SECONDS</span>
+      </div>
+    </div>
+
+    <div class="calendar">
+      <h3>DECEMBER 2026</h3>
+      <div class="calendar-grid" id="calendar"></div>
+    </div>
+
+    <a class="location-btn"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Islam+%26+Radwa+Wedding&dates=20261214T160000Z/20261214T190000Z&details=Wedding+Celebration&location=Nady+Etihad+El+Shorta+-+Laylati+Hall"
+       target="_blank">
+       ADD TO CALENDAR
+    </a>
+  </section>
+
+  <section>
+    <div class="subtitle">JOIN OUR CELEBRATION</div>
+    <h2 class="section-title">The Venue</h2>
+
+    <div class="location-card">
+      <h3>Nady Etihad El Shorta</h3>
+      <p>Laylati Hall</p>
+      <p>نادي اتحاد الشرطة – قاعة ليلتي</p>
+      <div class="gold-line"></div>
+      <p>Monday, December 14, 2026</p>
+      <p>6:00 PM</p>
+
+      <a class="location-btn"
+         href="https://www.google.com/maps/search/?api=1&query=Nady+Etihad+El+Shorta+Cairo+Egypt"
+         target="_blank">
+         VIEW LOCATION
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="subtitle">OUR MEMORIES</div>
+    <h2 class="section-title">Our Gallery</h2>
+
+    <div class="gallery" id="gallery">
+      <img src="images/photo1.jpg" alt="Our memory 1">
+      <img src="images/photo2.jpg" alt="Our memory 2">
+      <img src="images/photo3.jpg" alt="Our memory 3">
+      <img src="images/photo4.jpg" alt="Our memory 4">
+    </div>
+  </section>
+
+  <section>
+    <div class="subtitle">WE HOPE TO SEE YOU</div>
+    <h2 class="section-title">RSVP</h2>
+
+    <div class="form-card">
+      <form onsubmit="submitRSVP(event)">
+        <input id="rsvpName" placeholder="Your Name" required>
+        <select id="attendance">
+          <option value="Joyfully Accepts">Joyfully Accepts</option>
+          <option value="Regretfully Declines">Regretfully Declines</option>
+        </select>
+        <input id="guests" type="number" min="1" max="20"
+               value="1" placeholder="Number of Guests">
+        <button type="submit">CONFIRM</button>
+      </form>
+      <p id="rsvpStatus"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="subtitle">LEAVE US A MESSAGE</div>
+    <h2 class="section-title">Guest Book</h2>
+
+    <div class="form-card">
+      <form onsubmit="addMessage(event)">
+        <input id="guestName" placeholder="Your Name" required>
+        <textarea id="guestMessage" rows="4"
+                  placeholder="Write your wishes..." required></textarea>
+        <button type="submit">SEND WISHES</button>
+      </form>
+    </div>
+
+    <div class="messages" id="messages"></div>
+  </section>
+
+  <footer>
+    <div class="gold-line"></div>
+    <div class="script">Islam & Radwa</div>
+    <p>MADE WITH LOVE</p>
+    <p>14.12.2026</p>
+  </footer>
+
+</main>
+
+<!-- ADMIN BUTTON -->
+<button class="admin-open" onclick="openAdmin()">⚙</button>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" class="hidden">
+  <div style="max-width:550px;margin:auto">
+    <h2>Invitation Settings</h2>
+    <p>Customize your wedding invitation.</p>
+
+    <div class="admin-group">
+      <h3>Names & Details</h3>
+      <label>Names</label>
+      <input id="editNames" value="Islam & Radwa">
+      <label>Wedding Date</label>
+      <input id="editDate" type="datetime-local"
+             value="2026-12-14T18:00">
+      <label>Venue</label>
+      <input id="editVenue" value="Nady Etihad El Shorta – Laylati Hall">
+      <label>Google Maps URL</label>
+      <input id="editMap" value="https://www.google.com/maps/search/?api=1&query=Nady+Etihad+El+Shorta+Cairo+Egypt">
+    </div>
+
+    <div class="admin-group">
+      <h3>Colors & Fonts</h3>
+      <label>Background Color</label>
+      <input id="editBg" type="color" value="#241016">
+      <label>Gold Color</label>
+      <input id="editGold" type="color" value="#d5b477">
+      <label>Burgundy Color</label>
+      <input id="editBurgundy" type="color" value="#501d30">
+      <label>Font</label>
+      <select id="editFont">
+        <option value="'Cormorant Garamond', serif">Cormorant Garamond</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="Arial, sans-serif">Arial</option>
+      </select>
+    </div>
+
+    <div class="admin-group">
+      <h3>Photos</h3>
+      <p>Enter image URLs or paths.</p>
+      <input id="photo1" value="images/cover.jpg" placeholder="Cover image">
+      <input id="photo2" value="images/main.jpg" placeholder="Main image">
+      <input id="photo3" value="images/photo1.jpg">
+      <input id="photo4" value="images/photo2.jpg">
+      <input id="photo5" value="images/photo3.jpg">
+      <input id="photo6" value="images/photo4.jpg">
+    </div>
+
+    <div class="admin-group">
+      <h3>Music</h3>
+      <input id="editMusic" value="music/song.mp3">
+    </div>
+
+    <div class="admin-actions">
+      <button onclick="saveSettings()">SAVE CHANGES</button>
+      <button onclick="closeAdmin()">CLOSE</button>
+    </div>
+
+    <p style="color:#d5b477;font-size:13px">
+      Settings are saved in this browser. To publish changes,
+      update the files on GitHub.
+    </p>
+  </div>
 </div>
-<div class="ornament">♡</div>
-</section>
-
-<section class="section">
-<h2>Ceremony Info</h2>
-<div class="line"></div>
-<div class="venue">
-<div class="ornament">✧</div>
-<h3 id="venueName">Nady Etihad El Shorta – Laylati Hall</h3>
-<p id="venueAddress">نادي اتحاد الشرطة – قاعة ليلتي</p>
-<a id="mapLink" href="https://www.google.com/maps/search/?api=1&query=نادي+اتحاد+الشرطة+قاعة+ليلتي" target="_blank">VIEW LOCATION ↗</a>
-</div>
-</section>
-
-<section class="section">
-<h2>Our Memories</h2>
-<div class="line"></div>
-<div class="gallery" id="gallery"><div class="ornament">♡</div><div class="ornament">♡</div></div>
-</section>
-
-<section class="section">
-<h2>Guest Book</h2>
-<div class="line"></div>
-<p>Leave us a lovely message to remember our special day.</p>
-<form id="guestbook" onsubmit="addMessage(event)">
-<input id="guestName" placeholder="Your Name" required>
-<textarea id="guestMessage" placeholder="Write your wishes..." required></textarea>
-<button class="gold-btn" type="submit">SEND YOUR WISHES ♡</button>
-</form>
-<div id="messages"></div>
-</section>
-<footer><div class="ornament">♡</div>WITH LOVE, ISLAM & RADWA</footer>
-</div>
-
-<button id="settings" onclick="showEditor()" style="display:none">⚙</button>
-<div id="editor">
-<button class="gold-btn" onclick="hideEditor()">CLOSE ✕</button>
-<h2>Invitation Settings</h2>
-<label>Wedding date and time</label><input type="datetime-local" id="editDate">
-<label>Venue name</label><input id="editVenue">
-<label>Venue details</label><input id="editAddress">
-<label>Google Maps link</label><input id="editMap">
-<label>Background color</label><input type="color" id="editColor" value="#641b32">
-<label>Gold color</label><input type="color" id="editGold" value="#d5b477">
-<label>Font</label>
-<select id="editFont">
-<option value="Georgia,serif">Georgia</option>
-<option value="Times New Roman,serif">Times New Roman</option>
-<option value="Arial,sans-serif">Arial</option>
-<option value="cursive">Cursive</option>
-</select>
-<label>Gallery image URLs (one per line)</label><textarea id="editImages"></textarea>
-<label>Music URL (MP3)</label><input id="editMusic">
-<button class="gold-btn" onclick="saveSettings()">SAVE CHANGES</button>
-<p style="color:#d5b477;font-size:12px">Changes are saved on this device only.</p>
-</div>
-<audio id="music" src="song.mp3" loop></audio>
 
 <script>
-const defaults={
-date:"",venue:"Nady Etihad El Shorta – Laylati Hall",
-address:"نادي اتحاد الشرطة – قاعة ليلتي",
-map:"https://www.google.com/maps/search/?api=1&query=نادي+اتحاد+الشرطة+قاعة+ليلتي",
-color:"#641b32",gold:"#d5b477",font:"Georgia,serif",images:["photo2.jpg","photo3.jpg"],music:"song.mp3"
-};
-let settings={...defaults};
+const $ = id => document.getElementById(id);
 
-function openInvitation(){
-document.getElementById("intro").style.display="none";
-document.getElementById("invitation").style.display="block";
-document.getElementById("settings").style.display="block";
-const music=document.getElementById("music");
-if(music.src)music.play().catch(()=>{});
-window.scrollTo(0,0);
-}
-function showEditor(){document.getElementById("editor").style.display="block"}
-function hideEditor(){document.getElementById("editor").style.display="none"}
+let weddingDate = new Date('2026-12-14T18:00:00');
 
-function saveSettings(){
-settings.date=document.getElementById("editDate").value;
-settings.venue=document.getElementById("editVenue").value;
-settings.address=document.getElementById("editAddress").value;
-settings.map=document.getElementById("editMap").value;
-settings.color=document.getElementById("editColor").value;
-settings.gold=document.getElementById("editGold").value;
-settings.font=document.getElementById("editFont").value;
-settings.images=document.getElementById("editImages").value.split("\n").map(x=>x.trim()).filter(Boolean);
-settings.music=document.getElementById("editMusic").value.trim();
-localStorage.setItem("weddingSettings",JSON.stringify(settings));
-applySettings();hideEditor();alert("Settings saved on this device!");
+function openInvitation() {
+  $('intro').classList.add('hidden');
+  $('invitation').classList.remove('hidden');
+
+  $('music').play().catch(() => {
+    alert('Tap the music control to start the music.');
+  });
+
+  window.scrollTo(0,0);
 }
-function applySettings(){
-document.documentElement.style.setProperty("--gold",settings.gold);
-document.body.style.fontFamily=settings.font;
-document.getElementById("venueName").textContent=settings.venue;
-document.getElementById("venueAddress").textContent=settings.address;
-document.getElementById("mapLink").href=settings.map;
-if(settings.date){
-const d=new Date(settings.date);
-document.getElementById("dateText").textContent=d.toLocaleString("en-US",{dateStyle:"full",timeStyle:"short"});
+
+function updateCountdown() {
+  const diff = weddingDate.getTime() - Date.now();
+
+  if (diff <= 0) {
+    ['days','hours','minutes','seconds'].forEach(id => $(id).textContent = '00');
+    return;
+  }
+
+  $('days').textContent = Math.floor(diff / 86400000);
+  $('hours').textContent = Math.floor(diff % 86400000 / 3600000);
+  $('minutes').textContent = Math.floor(diff % 3600000 / 60000);
+  $('seconds').textContent = Math.floor(diff % 60000 / 1000);
 }
-const gallery=document.getElementById("gallery");gallery.innerHTML="";
-if(settings.images.length){
-settings.images.forEach(url=>{
-const img=document.createElement("img");img.src=url;img.alt="Wedding memory";gallery.appendChild(img);
-});
-}else gallery.innerHTML='<div class="ornament">♡</div><div class="ornament">♡</div>';
-const music=document.getElementById("music");
-if(settings.music&&music.src!==settings.music){music.src=settings.music;music.load()}
-updateCountdown();
-}
-function updateCountdown(){
-if(!settings.date)return;
-const diff=new Date(settings.date).getTime()-Date.now();
-if(diff<0)return;
-document.getElementById("days").textContent=Math.floor(diff/86400000);
-document.getElementById("hours").textContent=Math.floor(diff/3600000)%24;
-document.getElementById("minutes").textContent=Math.floor(diff/60000)%60;
-document.getElementById("seconds").textContent=Math.floor(diff/1000)%60;
-}
+
 setInterval(updateCountdown,1000);
-function addMessage(event){
-event.preventDefault();
-const name=document.getElementById("guestName").value.trim();
-const message=document.getElementById("guestMessage").value.trim();
-if(!name||!message)return;
-const entries=JSON.parse(localStorage.getItem("weddingMessages")||"[]");
-entries.unshift({name,message});
-localStorage.setItem("weddingMessages",JSON.stringify(entries));
-document.getElementById("guestbook").reset();displayMessages();
+updateCountdown();
+
+/* CALENDAR */
+
+function buildCalendar() {
+  const grid = $('calendar');
+  grid.innerHTML = '';
+
+  ['SUN','MON','TUE','WED','THU','FRI','SAT'].forEach(d => {
+    const s = document.createElement('span');
+    s.className = 'day-name';
+    s.textContent = d;
+    grid.appendChild(s);
+  });
+
+  const firstDay = new Date(2026,11,1).getDay();
+  const totalDays = 31;
+
+  for(let i=0;i<firstDay;i++) {
+    grid.appendChild(document.createElement('span'));
+  }
+
+  for(let d=1;d<=totalDays;d++) {
+    const s = document.createElement('span');
+    s.textContent = d;
+
+    if(d===14) s.className='wedding-day';
+
+    grid.appendChild(s);
+  }
 }
-function displayMessages(){
-const entries=JSON.parse(localStorage.getItem("weddingMessages")||"[]");
-const box=document.getElementById("messages");box.innerHTML="";
-entries.forEach(item=>{
-const div=document.createElement("div");div.className="message";
-const strong=document.createElement("strong");strong.style.color="var(--gold)";strong.textContent=item.name;
-const p=document.createElement("p");p.textContent=item.message;
-div.append(strong,p);box.appendChild(div);
-});
+
+buildCalendar();
+
+/* RSVP */
+
+function submitRSVP(e) {
+  e.preventDefault();
+
+  const data = {
+    name: $('rsvpName').value,
+    attendance: $('attendance').value,
+    guests: $('guests').value
+  };
+
+  const list = JSON.parse(localStorage.getItem('rsvps') || '[]');
+  list.push(data);
+  localStorage.setItem('rsvps',JSON.stringify(list));
+
+  $('rsvpStatus').textContent = 'Thank you for your response!';
+  e.target.reset();
 }
-function loadSettings(){
-try{
-const saved=JSON.parse(localStorage.getItem("weddingSettings")||"null");
-if(saved)settings={...defaults,...saved};
-}catch(e){}
-document.getElementById("editDate").value=settings.date;
-document.getElementById("editVenue").value=settings.venue;
-document.getElementById("editAddress").value=settings.address;
-document.getElementById("editMap").value=settings.map;
-document.getElementById("editColor").value=settings.color;
-document.getElementById("editGold").value=settings.gold;
-document.getElementById("editFont").value=settings.font;
-document.getElementById("editImages").value=settings.images.join("\n");
-document.getElementById("editMusic").value=settings.music;
-applySettings();displayMessages();
+
+/* GUESTBOOK */
+
+function addMessage(e) {
+  e.preventDefault();
+
+  const name = $('guestName').value.trim();
+  const message = $('guestMessage').value.trim();
+
+  const list = JSON.parse(localStorage.getItem('wishes') || '[]');
+
+  list.unshift({name,message});
+
+  localStorage.setItem('wishes',JSON.stringify(list));
+
+  e.target.reset();
+  showMessages();
 }
-loadSettings();
+
+function showMessages() {
+  const list = JSON.parse(localStorage.getItem('wishes') || '[]');
+  const box = $('messages');
+
+  box.innerHTML = '';
+
+  list.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'message';
+
+    const name = document.createElement('strong');
+    name.style.color = 'var(--gold)';
+    name.textContent = item.name;
+
+    const p = document.createElement('p');
+    p.textContent = item.message;
+
+    div.append(name,p);
+    box.appendChild(div);
+  });
+}
+
+showMessages();
+
+/* ADMIN */
+
+function openAdmin() {
+  $('adminPanel').classList.remove('hidden');
+  loadSettings();
+}
+
+function closeAdmin() {
+  $('adminPanel').classList.add('hidden');
+}
+
+function loadSettings() {
+  const saved = JSON.parse(localStorage.getItem('weddingSettings') || '{}');
+
+  Object.keys(saved).forEach(id => {
+    if($(id)) $(id).value = saved[id];
+  });
+}
+
+function saveSettings() {
+  const ids = [
+    'editNames','editDate','editVenue','editMap',
+    'editBg','editGold','editBurgundy','editFont',
+    'photo1','photo2','photo3','photo4','photo5','photo6',
+    'editMusic'
+  ];
+
+  const settings = {};
+
+  ids.forEach(id => settings[id] = $(id).value);
+
+  localStorage.setItem('weddingSettings',JSON.stringify(settings));
+
+  document.documentElement.style.setProperty('--bg',settings.editBg);
+  document.documentElement.style.setProperty('--gold',settings.editGold);
+  document.documentElement.style.setProperty('--burgundy',settings.editBurgundy);
+
+  weddingDate = new Date(settings.editDate);
+  updateCountdown();
+
+  document.body.style.fontFamily = settings.editFont;
+
+  document.querySelectorAll('.script,.hero h1').forEach(el => {
+    el.textContent = settings.editNames;
+  });
+
+  document.querySelector('.location-card h3').textContent = settings.editVenue;
+
+  document.querySelector('.location-btn[href*="google"]').href = settings.editMap;
+
+  $('intro').style.backgroundImage =
+    `linear-gradient(#210c16aa,#210c16cc),url("${settings.photo1}")`;
+
+  document.querySelector('.hero').style.backgroundImage =
+    `linear-gradient(#200b15aa,#200b15bb),url("${settings.photo2}")`;
+
+  const gallery = $('gallery');
+  gallery.innerHTML = '';
+
+  ['photo3','photo4','photo5','photo6'].forEach(id => {
+    const img = document.createElement('img');
+    img.src = settings[id];
+    img.alt = 'Wedding photo';
+    gallery.appendChild(img);
+  });
+
+  $('music').src = settings.editMusic;
+
+  alert('Settings saved successfully!');
+}
 </script>
+
 </body>
 </html>
