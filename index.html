@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,98 +6,437 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Islam & Radwa | Wedding Invitation</title>
 <style>
+:root {
+  --wine:#641b32;
+  --gold:#d5b477;
+  --cream:#f8eee6;
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:Georgia,serif;background:#17120f;color:#f8ead5;text-align:center}
-#intro{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:25px;background:linear-gradient(#17120fbb,#17120fee),url('') center/cover}
-.names{font-size:clamp(42px,10vw,75px);color:#d8b779;font-style:italic}
-.small{letter-spacing:4px;font-size:12px}
-button{background:#c9a56b;color:#21180f;border:0;padding:16px 32px;font-size:13px;letter-spacing:3px;cursor:pointer;margin-top:30px}
+body{
+  margin:0;
+  background:#1c1015;
+  color:var(--cream);
+  font-family:Georgia,serif;
+  text-align:center;
+}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+#intro{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  background:
+  linear-gradient(#210d17a8,#210d17d9),
+  radial-gradient(ellipse at center,#85364f,#210d17 75%);
+}
+.small{letter-spacing:5px;text-transform:uppercase;color:var(--gold)}
+.names{
+  font-size:clamp(48px,11vw,88px);
+  color:var(--gold);
+  font-style:italic;
+  margin:22px 0;
+}
+.open-btn,.gold-btn{
+  border:1px solid var(--gold);
+  background:var(--gold);
+  color:#351321;
+  padding:14px 32px;
+  letter-spacing:2px;
+  border-radius:30px;
+  margin-top:20px;
+}
 #invitation{display:none}
-section{padding:65px 20px;border-bottom:1px solid #715c3c}
-h2{color:#d8b779;font-weight:normal;font-size:30px}
-p{line-height:1.9;color:#e9dcc9}
-.hero{min-height:75vh;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(#17120f99,#17120fee)}
-.count{font-size:27px;color:#d8b779;margin-top:25px}
-#guestbook input,#guestbook textarea{width:100%;max-width:420px;padding:13px;margin:8px;background:#f8ead5;border:0;font-family:Arial}
-#messages{max-width:500px;margin:auto}
-.message{border-bottom:1px solid #715c3c;padding:15px}
-footer{padding:30px;color:#c9a56b}
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  padding:35px 20px;
+  background:
+  linear-gradient(#210d17a6,#210d17df),
+  radial-gradient(circle at center,#77334b,#1c1015 75%);
+}
+.hero h1{
+  color:var(--gold);
+  font-size:clamp(44px,10vw,78px);
+  font-style:italic;
+  font-weight:normal;
+  margin:15px;
+}
+.ornament{color:var(--gold);font-size:30px;margin:15px}
+.section{padding:65px 20px;max-width:850px;margin:auto}
+.section h2{
+  color:var(--gold);
+  font-size:34px;
+  font-style:italic;
+  font-weight:normal;
+}
+.line{width:75px;height:1px;background:var(--gold);margin:22px auto}
+.date{font-size:24px;color:var(--gold)}
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:30px auto;
+}
+.timebox{
+  border:1px solid #a77b65;
+  padding:17px 12px;
+  min-width:75px;
+  border-radius:8px;
+}
+.timebox strong{display:block;font-size:27px;color:var(--gold)}
+.timebox span{font-size:11px;letter-spacing:1px}
+.venue{
+  border:1px solid #805267;
+  padding:30px 20px;
+  border-radius:12px;
+  background:#ffffff08;
+}
+.venue h3{color:var(--gold);font-size:25px;font-weight:normal}
+a{color:var(--gold)}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:8px;
+  border:1px solid #8b6470;
+}
+#guestbook{
+  width:100%;
+  max-width:500px;
+  margin:auto;
+}
+#guestbook input,#guestbook textarea,
+#editor input,#editor textarea{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  background:#291720;
+  border:1px solid #795364;
+  color:white;
+  border-radius:6px;
+}
+#guestbook textarea,#editor textarea{min-height:90px}
+.message{
+  border-bottom:1px solid #674353;
+  padding:15px;
+  text-align:left;
+}
+footer{padding:40px 15px;color:var(--gold)}
+#settings{
+  position:fixed;
+  right:12px;
+  bottom:12px;
+  background:var(--gold);
+  color:#321321;
+  border:0;
+  border-radius:50%;
+  width:48px;height:48px;
+  font-size:21px;
+  z-index:10;
+}
+#editor{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:20;
+  background:#1c1015;
+  overflow:auto;
+  padding:25px;
+  text-align:left;
+}
+#editor h2{color:var(--gold)}
+#editor label{display:block;margin-top:12px;color:var(--gold)}
+#editor .close{float:right}
 </style>
 </head>
 <body>
 
+<!-- OPENING SCREEN -->
 <div id="intro">
-<div class="small">YOU ARE CORDIALLY INVITED TO</div>
-<div class="names">Islam & Radwa</div>
-<p>Two hearts, one beautiful story.</p>
-<button onclick="openInvitation()">OPEN INVITATION</button>
+  <div class="small">Together with our families</div>
+  <div class="ornament">✦</div>
+  <div class="names">Islam & Radwa</div>
+  <p>WE INVITE YOU TO CELEBRATE OUR WEDDING</p>
+  <div class="ornament">♡</div>
+  <button class="open-btn" onclick="openInvitation()">
+    OPEN INVITATION
+  </button>
 </div>
 
-<audio id="music" loop>
-<source src="song.mp3" type="audio/mpeg">
-</audio>
-
+<!-- MAIN INVITATION -->
 <div id="invitation">
-<div class="hero">
-<div class="small">THE WEDDING OF</div>
-<div class="names">Islam & Radwa</div>
-<p>We would love you to be part of our special day</p>
+
+  <section class="hero">
+    <div class="small">A celebration of love</div>
+    <div class="ornament">✧</div>
+    <h1>Islam & Radwa</h1>
+    <p>ARE GETTING MARRIED</p>
+    <div class="ornament">♡</div>
+    <p>We would be honored to have you with us</p>
+  </section>
+
+  <section class="section">
+    <div class="ornament">✦</div>
+    <h2>Our Special Day</h2>
+    <div class="line"></div>
+    <p class="date" id="dateText">Our Wedding Day</p>
+    <div class="countdown" id="countdown">
+      <div class="timebox"><strong id="days">--</strong><span>DAYS</span></div>
+      <div class="timebox"><strong id="hours">--</strong><span>HOURS</span></div>
+      <div class="timebox"><strong id="minutes">--</strong><span>MINUTES</span></div>
+      <div class="timebox"><strong id="seconds">--</strong><span>SECONDS</span></div>
+    </div>
+    <div class="ornament">♡</div>
+  </section>
+
+  <section class="section">
+    <h2>Ceremony Info</h2>
+    <div class="line"></div>
+    <div class="venue">
+      <div class="ornament">✧</div>
+      <h3 id="venueName">Nady El Shorta – Laylati Hall</h3>
+      <p id="venueAddress">Police Club, Laylati Hall</p>
+      <a id="mapLink"
+         href="https://www.google.com/maps/search/?api=1&query=نادي+اتحاد+الشرطة+قاعة+ليلتي"
+         target="_blank">VIEW LOCATION ↗</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Our Memories</h2>
+    <div class="line"></div>
+    <div class="gallery" id="gallery">
+      <div class="ornament">♡</div>
+      <div class="ornament">♡</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Guest Book</h2>
+    <div class="line"></div>
+    <p>Leave us a lovely message to remember our special day.</p>
+    <form id="guestbook" onsubmit="addMessage(event)">
+      <input id="guestName" placeholder="Your Name" required>
+      <textarea id="guestMessage" placeholder="Write your wishes..." required></textarea>
+      <button class="gold-btn" type="submit">SEND YOUR WISHES ♡</button>
+    </form>
+    <div id="messages"></div>
+  </section>
+
+  <footer>
+    <div class="ornament">♡</div>
+    WITH LOVE, ISLAM & RADWA
+  </footer>
 </div>
 
-<section>
-<h2>Our Wedding Day</h2>
-<p>With love and happiness, we invite you to celebrate our wedding.</p>
-<div class="count" id="countdown">14 December 2026</div>
-</section>
+<button id="settings" onclick="showEditor()" title="Customize">⚙</button>
 
-<section>
-<h2>Save The Date</h2>
-<p>Monday, December 14, 2026</p>
-<p>Join us as we begin our forever.</p>
-</section>
+<!-- CUSTOMIZATION PANEL -->
+<div id="editor">
+  <button class="gold-btn close" onclick="hideEditor()">CLOSE ✕</button>
+  <h2>Invitation Settings</h2>
+  <p>Change your invitation details here.</p>
 
-<section>
-<h2>Our Moments</h2>
-<p>Our beautiful memories will be added here soon.</p>
-</section>
+  <label>Wedding date and time</label>
+  <input type="datetime-local" id="editDate">
 
-<section id="guestbook">
-<h2>Guest Book</h2>
-<p>Leave us a message and a wish for our new journey.</p>
-<input id="guestName" placeholder="Your Name">
-<textarea id="guestMessage" rows="4" placeholder="Write your wishes..."></textarea>
-<br>
-<button onclick="addMessage()">SEND YOUR WISH</button>
-<div id="messages"></div>
-</section>
+  <label>Venue name</label>
+  <input id="editVenue">
 
-<footer>
-With Love, Islam & Radwa ♡
-</footer>
+  <label>Venue details</label>
+  <input id="editAddress">
+
+  <label>Google Maps link</label>
+  <input id="editMap">
+
+  <label>Background color</label>
+  <input type="color" id="editColor" value="#641b32">
+
+  <label>Gold color</label>
+  <input type="color" id="editGold" value="#d5b477">
+
+  <label>Font</label>
+  <select id="editFont">
+    <option value="Georgia,serif">Georgia</option>
+    <option value="'Times New Roman',serif">Times New Roman</option>
+    <option value="Arial,sans-serif">Arial</option>
+    <option value="cursive">Cursive</option>
+  </select>
+
+  <label>Gallery image URLs (one per line)</label>
+  <textarea id="editImages" placeholder="Paste image links here"></textarea>
+
+  <label>Music URL (MP3)</label>
+  <input id="editMusic" placeholder="Paste your music link here">
+
+  <button class="gold-btn" onclick="saveSettings()">SAVE CHANGES</button>
+  <p style="font-size:12px;color:#d5b477">
+    Changes are saved in this browser. To publish them for everyone,
+    the updated settings must be included in the website files.
+  </p>
 </div>
+
+<audio id="music" loop></audio>
 
 <script>
+const defaults = {
+  date:"",
+  venue:"Nady El Shorta – Laylati Hall",
+  address:"Police Club, Laylati Hall",
+  map:"https://www.google.com/maps/search/?api=1&query=نادي+اتحاد+الشرطة+قاعة+ليلتي",
+  color:"#641b32",
+  gold:"#d5b477",
+  font:"Georgia,serif",
+  images:[],
+  music:""
+};
+
+let settings = {...defaults};
+
 function openInvitation(){
-document.getElementById('intro').style.display='none';
-document.getElementById('invitation').style.display='block';
-document.getElementById('music').play().catch(()=>{});
-window.scrollTo(0,0);
+  document.getElementById("intro").style.display="none";
+  document.getElementById("invitation").style.display="block";
+  document.getElementById("settings").style.display="block";
+  const music=document.getElementById("music");
+  if(music.src){
+    music.play().catch(()=>{});
+  }
+  window.scrollTo(0,0);
 }
-function addMessage(){
-const name=document.getElementById('guestName').value.trim();
-const message=document.getElementById('guestMessage').value.trim();
-if(!name||!message){alert('Please enter your name and message');return;}
-const item=document.createElement('div');
-item.className='message';
-const strong=document.createElement('strong');
-strong.textContent=name;
-const p=document.createElement('p');
-p.textContent=message;
-item.append(strong,p);
-document.getElementById('messages').prepend(item);
-document.getElementById('guestName').value='';
-document.getElementById('guestMessage').value='';
+
+function showEditor(){
+  document.getElementById("editor").style.display="block";
 }
+function hideEditor(){
+  document.getElementById("editor").style.display="none";
+}
+
+function saveSettings(){
+  settings.date=document.getElementById("editDate").value;
+  settings.venue=document.getElementById("editVenue").value;
+  settings.address=document.getElementById("editAddress").value;
+  settings.map=document.getElementById("editMap").value;
+  settings.color=document.getElementById("editColor").value;
+  settings.gold=document.getElementById("editGold").value;
+  settings.font=document.getElementById("editFont").value;
+  settings.images=document.getElementById("editImages").value
+    .split("\n").map(x=>x.trim()).filter(Boolean);
+  settings.music=document.getElementById("editMusic").value.trim();
+
+  localStorage.setItem("weddingSettings",JSON.stringify(settings));
+  applySettings();
+  hideEditor();
+  alert("Settings saved on this device!");
+}
+
+function applySettings(){
+  document.documentElement.style.setProperty("--wine",settings.color);
+  document.documentElement.style.setProperty("--gold",settings.gold);
+  document.body.style.fontFamily=settings.font;
+  document.getElementById("venueName").textContent=settings.venue;
+  document.getElementById("venueAddress").textContent=settings.address;
+  document.getElementById("mapLink").href=settings.map;
+
+  if(settings.date){
+    const d=new Date(settings.date);
+    document.getElementById("dateText").textContent=
+      d.toLocaleString("en-US",{dateStyle:"full",timeStyle:"short"});
+  }
+
+  const gallery=document.getElementById("gallery");
+  gallery.innerHTML="";
+  if(settings.images.length){
+    settings.images.forEach(url=>{
+      const img=document.createElement("img");
+      img.src=url;
+      img.alt="Wedding memory";
+      gallery.appendChild(img);
+    });
+  }else{
+    gallery.innerHTML='<div class="ornament">♡</div><div class="ornament">♡</div>';
+  }
+
+  const music=document.getElementById("music");
+  if(settings.music && music.src!==settings.music){
+    music.src=settings.music;
+    music.load();
+  }
+  updateCountdown();
+}
+
+function updateCountdown(){
+  if(!settings.date)return;
+  const diff=new Date(settings.date).getTime()-Date.now();
+  if(diff<0)return;
+  document.getElementById("days").textContent=Math.floor(diff/86400000);
+  document.getElementById("hours").textContent=Math.floor(diff/3600000)%24;
+  document.getElementById("minutes").textContent=Math.floor(diff/60000)%60;
+  document.getElementById("seconds").textContent=Math.floor(diff/1000)%60;
+}
+
+setInterval(updateCountdown,1000);
+
+function addMessage(event){
+  event.preventDefault();
+  const name=document.getElementById("guestName").value.trim();
+  const message=document.getElementById("guestMessage").value.trim();
+  if(!name||!message)return;
+  const entries=JSON.parse(localStorage.getItem("weddingMessages")||"[]");
+  entries.unshift({name,message});
+  localStorage.setItem("weddingMessages",JSON.stringify(entries));
+  document.getElementById("guestbook").reset();
+  displayMessages();
+}
+
+function displayMessages(){
+  const entries=JSON.parse(localStorage.getItem("weddingMessages")||"[]");
+  const box=document.getElementById("messages");
+  box.innerHTML="";
+  entries.forEach(item=>{
+    const div=document.createElement("div");
+    div.className="message";
+    const strong=document.createElement("strong");
+    strong.style.color="var(--gold)";
+    strong.textContent=item.name;
+    const p=document.createElement("p");
+    p.textContent=item.message;
+    div.append(strong,p);
+    box.appendChild(div);
+  });
+}
+
+function loadSettings(){
+  try{
+    const saved=JSON.parse(localStorage.getItem("weddingSettings")||"null");
+    if(saved)settings={...defaults,...saved};
+  }catch(e){}
+  document.getElementById("editDate").value=settings.date;
+  document.getElementById("editVenue").value=settings.venue;
+  document.getElementById("editAddress").value=settings.address;
+  document.getElementById("editMap").value=settings.map;
+  document.getElementById("editColor").value=settings.color;
+  document.getElementById("editGold").value=settings.gold;
+  document.getElementById("editFont").value=settings.font;
+  document.getElementById("editImages").value=settings.images.join("\n");
+  document.getElementById("editMusic").value=settings.music;
+  applySettings();
+  displayMessages();
+}
+
+document.getElementById("settings").style.display="none";
+loadSettings();
 </script>
 </body>
 </html>
