@@ -1,340 +1,102 @@
-
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Islam & Radwa | Wedding Invitation</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
-:root {
-  --gold: #c5a46d;
-  --cream: #f8f4ed;
-  --dark: #29231f;
-  --font-ar: 'Amiri', serif;
-  --font-en: 'Cormorant Garamond', serif;
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--dark);
-  font-family: var(--font-ar);
-  text-align: center;
-}
-
-.hero {
-  min-height: 100vh;
-  padding: 55px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(#211c1880,#211c1890),
-    url('images/cover.jpg') center/cover no-repeat,
-    #51483e;
-  color: white;
-}
-
-.invitation {
-  width: 100%;
-  max-width: 650px;
-  border: 1px solid #c5a46d;
-  padding: 45px 22px;
-  background: #29231f45;
-  backdrop-filter: blur(3px);
-}
-
-.small-title {
-  color: #e5c994;
-  letter-spacing: 4px;
-  font-family: var(--font-en);
-  font-size: 19px;
-}
-
-h1 {
-  font-family: var(--font-en);
-  font-size: clamp(48px, 11vw, 78px);
-  font-weight: 400;
-  margin: 25px 0 5px;
-}
-
-.names-ar {
-  font-size: 37px;
-  color: #f0d6a6;
-  margin: 5px;
-}
-
-.ampersand {
-  color: var(--gold);
-  font-size: 35px;
-}
-
-.intro {
-  font-size: 20px;
-  line-height: 2;
-  margin: 25px auto;
-}
-
-.date {
-  color: #f0d6a6;
-  font-size: 25px;
-  margin-top: 30px;
-}
-
-.section {
-  padding: 65px 20px;
-}
-
-.section-title {
-  color: #a88958;
-  font-family: var(--font-en);
-  font-size: 38px;
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-
-.ar-title {
-  font-size: 27px;
-  margin: 0 0 30px;
-}
-
-.details {
-  max-width: 550px;
-  margin: auto;
-  border-top: 1px solid var(--gold);
-  border-bottom: 1px solid var(--gold);
-  padding: 25px 10px;
-  line-height: 2.2;
-  font-size: 20px;
-}
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  direction: ltr;
-  margin-top: 25px;
-}
-
-.time-box {
-  min-width: 75px;
-  padding: 15px 8px;
-  border: 1px solid var(--gold);
-  background: #fffaf2;
-}
-
-.time-box strong {
-  display: block;
-  font-family: var(--font-en);
-  font-size: 30px;
-  color: #9e7b49;
-}
-
-.time-box span {
-  font-size: 14px;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 750px;
-  margin: auto;
-}
-
-.gallery img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  background: #e9dfd0;
-}
-
-.gallery img:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-}
-
-.music-button {
-  border: 1px solid var(--gold);
-  background: transparent;
-  color: var(--dark);
-  padding: 13px 30px;
-  border-radius: 30px;
-  font-family: var(--font-ar);
-  font-size: 18px;
-  cursor: pointer;
-}
-
-footer {
-  background: #29231f;
-  color: #e5c994;
-  padding: 35px 15px;
-  font-size: 19px;
-}
-
-@media(max-width:480px) {
-  .invitation { padding: 35px 15px; }
-  .gallery img { height: 190px; }
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,serif;background:#17120f;color:#f8ead5;text-align:center}
+#intro{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:25px;background:linear-gradient(#17120fbb,#17120fee),url('') center/cover}
+.names{font-size:clamp(42px,10vw,75px);color:#d8b779;font-style:italic}
+.small{letter-spacing:4px;font-size:12px}
+button{background:#c9a56b;color:#21180f;border:0;padding:16px 32px;font-size:13px;letter-spacing:3px;cursor:pointer;margin-top:30px}
+#invitation{display:none}
+section{padding:65px 20px;border-bottom:1px solid #715c3c}
+h2{color:#d8b779;font-weight:normal;font-size:30px}
+p{line-height:1.9;color:#e9dcc9}
+.hero{min-height:75vh;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(#17120f99,#17120fee)}
+.count{font-size:27px;color:#d8b779;margin-top:25px}
+#guestbook input,#guestbook textarea{width:100%;max-width:420px;padding:13px;margin:8px;background:#f8ead5;border:0;font-family:Arial}
+#messages{max-width:500px;margin:auto}
+.message{border-bottom:1px solid #715c3c;padding:15px}
+footer{padding:30px;color:#c9a56b}
 </style>
 </head>
-
 <body>
 
-<!-- COVER -->
-<section class="hero">
-  <div class="invitation">
-    <div class="small-title">YOU ARE INVITED</div>
-    <p class="intro">بكل الحب والسعادة<br>يسعدنا دعوتكم لمشاركتنا أجمل أيام حياتنا</p>
+<div id="intro">
+<div class="small">YOU ARE CORDIALLY INVITED TO</div>
+<div class="names">Islam & Radwa</div>
+<p>Two hearts, one beautiful story.</p>
+<button onclick="openInvitation()">OPEN INVITATION</button>
+</div>
 
-    <h1>Islam <span class="ampersand">&</span> Radwa</h1>
-    <p class="names-ar">إسلام & رضوى</p>
+<audio id="music" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
 
-    <p class="intro">دعوتكم تكمل فرحتنا<br>ونتشرف بوجودكم معانا</p>
+<div id="invitation">
+<div class="hero">
+<div class="small">THE WEDDING OF</div>
+<div class="names">Islam & Radwa</div>
+<p>We would love you to be part of our special day</p>
+</div>
 
-    <div class="date" id="eventDate">Coming Soon</div>
-    <p class="small-title">OUR WEDDING DAY</p>
-  </div>
+<section>
+<h2>Our Wedding Day</h2>
+<p>With love and happiness, we invite you to celebrate our wedding.</p>
+<div class="count" id="countdown">14 December 2026</div>
 </section>
 
-<!-- COUNTDOWN -->
-<section class="section">
-  <div class="section-title">THE BIG DAY</div>
-  <h2 class="ar-title">فاضل قد إيه على فرحتنا؟</h2>
-
-  <div class="countdown" id="countdown">
-    <div class="time-box"><strong id="days">--</strong><span>Days</span></div>
-    <div class="time-box"><strong id="hours">--</strong><span>Hours</span></div>
-    <div class="time-box"><strong id="minutes">--</strong><span>Minutes</span></div>
-    <div class="time-box"><strong id="seconds">--</strong><span>Seconds</span></div>
-  </div>
+<section>
+<h2>Save The Date</h2>
+<p>Monday, December 14, 2026</p>
+<p>Join us as we begin our forever.</p>
 </section>
 
-<!-- DETAILS -->
-<section class="section" style="background:#fffaf3">
-  <div class="section-title">WEDDING DETAILS</div>
-  <h2 class="ar-title">تفاصيل الفرح</h2>
-
-  <div class="details">
-    <div>📅 التاريخ</div>
-    <div id="detailsDate">سيتم الإعلان قريبًا</div>
-    <br>
-    <div>📍 المكان</div>
-    <div id="venue">القاهرة</div>
-    <br>
-    <div>⏰ الموعد</div>
-    <div id="eventTime">سيتم الإعلان قريبًا</div>
-  </div>
+<section>
+<h2>Our Moments</h2>
+<p>Our beautiful memories will be added here soon.</p>
 </section>
 
-<!-- GALLERY -->
-<section class="section">
-  <div class="section-title">OUR MOMENTS</div>
-  <h2 class="ar-title">أجمل لحظاتنا</h2>
-
-  <div class="gallery" id="gallery">
-    <img src="images/photo1.jpg" alt="Our photo 1">
-    <img src="images/photo2.jpg" alt="Our photo 2">
-    <img src="images/photo3.jpg" alt="Our photo 3">
-    <img src="images/photo4.jpg" alt="Our photo 4">
-  </div>
-</section>
-
-<!-- MUSIC -->
-<section class="section" style="background:#fffaf3">
-  <div class="section-title">OUR SONG</div>
-  <h2 class="ar-title">أغنيتنا</h2>
-  <button class="music-button" onclick="toggleMusic()" id="musicBtn">
-    ♫ تشغيل الموسيقى
-  </button>
-  <audio id="weddingMusic" src="music/song.mp3" loop></audio>
+<section id="guestbook">
+<h2>Guest Book</h2>
+<p>Leave us a message and a wish for our new journey.</p>
+<input id="guestName" placeholder="Your Name">
+<textarea id="guestMessage" rows="4" placeholder="Write your wishes..."></textarea>
+<br>
+<button onclick="addMessage()">SEND YOUR WISH</button>
+<div id="messages"></div>
 </section>
 
 <footer>
-  <div>With Love</div>
-  <div style="font-family:var(--font-en);font-size:35px;margin:12px">
-    Islam & Radwa
-  </div>
-  <div>We can't wait to celebrate with you ❤️</div>
+With Love, Islam & Radwa ♡
 </footer>
+</div>
 
 <script>
-/* =================================
-   EDIT YOUR WEDDING DETAILS HERE
-================================= */
-
-// اكتبي التاريخ بالشكل ده: 2026-12-20T20:00:00
-const weddingDate = "";
-
-// التاريخ الظاهر للضيوف
-const dateText = "Coming Soon";
-
-// المكان
-const venueText = "القاهرة";
-
-// موعد الفرح
-const timeText = "سيتم الإعلان قريبًا";
-
-// =================================
-
-document.getElementById("eventDate").textContent = dateText;
-document.getElementById("detailsDate").textContent = dateText;
-document.getElementById("venue").textContent = venueText;
-document.getElementById("eventTime").textContent = timeText;
-
-function updateCountdown() {
-  if (!weddingDate) {
-    document.getElementById("countdown").style.display = "none";
-    return;
-  }
-
-  const distance = new Date(weddingDate).getTime() - Date.now();
-
-  if (distance <= 0) {
-    document.getElementById("countdown").innerHTML = "IT'S OUR WEDDING DAY ❤️";
-    return;
-  }
-
-  document.getElementById("days").textContent =
-    Math.floor(distance / 86400000);
-  document.getElementById("hours").textContent =
-    Math.floor((distance % 86400000) / 3600000);
-  document.getElementById("minutes").textContent =
-    Math.floor((distance % 3600000) / 60000);
-  document.getElementById("seconds").textContent =
-    Math.floor((distance % 60000) / 1000);
+function openInvitation(){
+document.getElementById('intro').style.display='none';
+document.getElementById('invitation').style.display='block';
+document.getElementById('music').play().catch(()=>{});
+window.scrollTo(0,0);
 }
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-// تشغيل الموسيقى
-function toggleMusic() {
-  const music = document.getElementById("weddingMusic");
-  const btn = document.getElementById("musicBtn");
-
-  if (music.paused) {
-    music.play().then(() => {
-      btn.textContent = "Ⅱ إيقاف الموسيقى";
-    }).catch(() => {
-      alert("تأكد من رفع ملف الأغنية داخل مجلد music باسم song.mp3");
-    });
-  } else {
-    music.pause();
-    btn.textContent = "♫ تشغيل الموسيقى";
-  }
+function addMessage(){
+const name=document.getElementById('guestName').value.trim();
+const message=document.getElementById('guestMessage').value.trim();
+if(!name||!message){alert('Please enter your name and message');return;}
+const item=document.createElement('div');
+item.className='message';
+const strong=document.createElement('strong');
+strong.textContent=name;
+const p=document.createElement('p');
+p.textContent=message;
+item.append(strong,p);
+document.getElementById('messages').prepend(item);
+document.getElementById('guestName').value='';
+document.getElementById('guestMessage').value='';
 }
-
-// إخفاء الصور غير المضافة لحد ما ترفع صورك
-document.querySelectorAll(".gallery img").forEach(img => {
-  img.onerror = () => img.style.display = "none";
-});
 </script>
-
 </body>
 </html>
