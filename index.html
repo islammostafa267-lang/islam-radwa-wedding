@@ -6,13 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Islam & Radwa | Wedding Invitation</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --bg: #241016;
-  --burgundy: #501d30;
   --gold: #d5b477;
   --cream: #f8ead5;
   --card: #321720;
@@ -28,108 +26,106 @@ body {
   color: var(--cream);
   font-family: 'Cormorant Garamond', serif;
   text-align: center;
-}
-
-button, input, textarea { font: inherit; }
-
-button {
-  cursor: pointer;
+  overflow-x: hidden;
 }
 
 .hidden { display: none !important; }
 
-/* OPENING SCREEN */
+/* OPENING */
 
 #intro {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 25px;
-  background:
-    linear-gradient(#210c16aa,#210c16cc),
-    url('images/cover.jpg') center/cover no-repeat;
+  background: linear-gradient(#210c16bb,#210c16cc),
+  url('Photo2.jpg') center/cover no-repeat;
 }
 
 .intro-frame {
+  width: 100%;
+  max-width: 500px;
+  padding: 45px 20px;
   border: 1px solid var(--gold);
   outline: 1px solid #d5b47766;
-  outline-offset: 9px;
-  padding: 55px 25px;
-  max-width: 520px;
-  width: 100%;
-  animation: fadeIn 2s ease;
+  outline-offset: 8px;
+  background: #24101699;
 }
 
 .small-title {
-  letter-spacing: 7px;
   color: var(--gold);
   font-size: 13px;
+  letter-spacing: 4px;
+  line-height: 1.8;
 }
 
 .script {
   font-family: 'Great Vibes', cursive;
   color: var(--gold);
-  font-size: clamp(48px, 10vw, 76px);
-  margin: 25px 0;
+  font-size: clamp(48px, 10vw, 75px);
+  line-height: 1.4;
+  margin: 20px 0;
+}
+
+.gold-line {
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+  margin: 25px auto;
 }
 
 .open-btn {
-  border: 1px solid var(--gold);
+  padding: 14px 28px;
+  margin-top: 20px;
   background: transparent;
   color: var(--cream);
-  padding: 14px 35px;
-  letter-spacing: 4px;
-  margin-top: 20px;
-  transition: .3s;
+  border: 1px solid var(--gold);
+  letter-spacing: 3px;
+  cursor: pointer;
 }
 
-.open-btn:hover {
-  background: var(--gold);
-  color: var(--bg);
-}
-
-/* MAIN INVITATION */
+/* MAIN */
 
 #invitation {
   animation: fadeIn 1.5s ease;
 }
 
 .hero {
-  min-height: 85vh;
+  min-height: 85svh;
   padding: 80px 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   background:
-    linear-gradient(#200b15aa,#200b15bb),
-    url('images/main.jpg') center/cover no-repeat;
+  linear-gradient(#200b15aa,#200b15bb),
+  url('Photo3.jpg') center/cover no-repeat;
 }
 
 .hero h1 {
   font-family: 'Great Vibes', cursive;
   color: var(--gold);
   font-size: clamp(55px, 12vw, 95px);
-  margin: 20px 0;
   font-weight: 400;
+  line-height: 1.4;
+  margin: 20px 0;
 }
 
 .hero p {
-  font-size: 20px;
+  font-size: 19px;
   letter-spacing: 3px;
-}
-
-.gold-line {
-  width: 90px;
-  height: 1px;
-  background: var(--gold);
-  margin: 25px auto;
+  line-height: 1.8;
+  margin: 8px 0;
 }
 
 section {
-  padding: 65px 20px;
+  display: block;
+  position: relative;
+  clear: both;
+  width: 100%;
+  padding: 65px 18px;
+  overflow: hidden;
 }
 
 .section-title {
@@ -137,12 +133,20 @@ section {
   color: var(--gold);
   font-size: 48px;
   font-weight: 400;
+  line-height: 1.5;
+  margin: 15px 0;
 }
 
 .subtitle {
-  letter-spacing: 3px;
   color: var(--gold);
+  letter-spacing: 3px;
   font-size: 13px;
+  line-height: 1.8;
+}
+
+section p {
+  line-height: 1.8;
+  margin: 12px auto;
 }
 
 /* COUNTDOWN */
@@ -151,25 +155,25 @@ section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 30px;
+  gap: 12px;
+  margin: 30px auto;
 }
 
 .count-box {
-  border: 1px solid var(--gold);
   min-width: 75px;
-  padding: 15px 10px;
+  padding: 14px 8px;
   background: var(--card);
+  border: 1px solid var(--gold);
 }
 
 .count-box strong {
   display: block;
   color: var(--gold);
-  font-size: 30px;
+  font-size: 29px;
 }
 
 .count-box span {
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 2px;
 }
 
@@ -177,59 +181,74 @@ section {
 
 .calendar {
   max-width: 350px;
+  width: 100%;
   margin: 30px auto;
   padding: 20px;
-  border: 1px solid var(--gold);
   background: var(--card);
+  border: 1px solid var(--gold);
 }
 
 .calendar h3 {
   color: var(--gold);
   letter-spacing: 4px;
+  margin: 5px 0 20px;
 }
 
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0,1fr));
   gap: 7px;
 }
 
 .calendar-grid span {
-  padding: 8px 0;
-  font-size: 15px;
+  min-height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
 }
 
 .calendar-grid .day-name {
   color: var(--gold);
+  font-size: 11px;
 }
 
 .wedding-day {
-  color: white;
-  background: var(--burgundy);
+  position: relative;
+  background: #501d30;
   border: 1px solid var(--gold);
   border-radius: 50%;
-  position: relative;
+  color: white;
 }
 
-/* LOCATION */
+.heart {
+  position: absolute;
+  top: -12px;
+  right: -5px;
+  color: var(--gold);
+  font-size: 16px;
+}
+
+/* VENUE */
 
 .location-card {
   max-width: 500px;
-  margin: auto;
-  padding: 35px 20px;
-  border: 1px solid var(--gold);
+  margin: 25px auto;
+  padding: 30px 18px;
   background: var(--card);
+  border: 1px solid var(--gold);
 }
 
 .location-card h3 {
   color: var(--gold);
   font-size: 27px;
+  line-height: 1.5;
 }
 
 .location-btn {
   display: inline-block;
-  margin: 20px 5px 0;
-  padding: 12px 25px;
+  margin: 15px 5px;
+  padding: 12px 22px;
   color: var(--cream);
   border: 1px solid var(--gold);
   text-decoration: none;
@@ -239,39 +258,36 @@ section {
 /* GALLERY */
 
 .gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
   max-width: 850px;
-  margin: auto;
+  margin: 30px auto;
+  padding: 10px;
 }
 
 .gallery img {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 650px;
+  max-height: 750px;
   object-fit: contain;
-  object-position: center;
-  border-radius: 12px;
   border: 1px solid var(--gold);
+  border-radius: 12px;
   background: #1c1015;
-  transition: transform .5s ease;
 }
 
-.gallery img:hover {
-  transform: scale(1.015);
-}
-
-/* RSVP & GUESTBOOK */
+/* FORMS */
 
 .form-card {
+  width: 100%;
   max-width: 480px;
   margin: 25px auto;
-  padding: 25px;
-  border: 1px solid var(--gold);
+  padding: 25px 18px;
   background: var(--card);
+  border: 1px solid var(--gold);
 }
 
 .form-card input,
@@ -279,20 +295,22 @@ section {
 .form-card select {
   display: block;
   width: 100%;
-  margin: 12px 0;
+  margin: 14px 0;
   padding: 13px;
   color: var(--cream);
   background: var(--bg);
   border: 1px solid #a8875b;
+  border-radius: 0;
   outline: none;
 }
 
 .form-card button {
-  padding: 12px 30px;
-  color: var(--bg);
+  padding: 13px 30px;
   background: var(--gold);
+  color: var(--bg);
   border: none;
   letter-spacing: 2px;
+  cursor: pointer;
 }
 
 .messages {
@@ -303,13 +321,14 @@ section {
 
 .message {
   padding: 15px;
-  margin: 10px 0;
-  border-left: 2px solid var(--gold);
+  margin: 12px 0;
   background: var(--card);
+  border-left: 2px solid var(--gold);
+  overflow-wrap: anywhere;
 }
 
 footer {
-  padding: 45px 20px;
+  padding: 45px 15px;
   color: var(--gold);
 }
 
@@ -317,13 +336,14 @@ footer {
   position: fixed;
   bottom: 15px;
   right: 15px;
-  background: #4c2634;
+  z-index: 20;
+  width: 43px;
+  height: 43px;
   color: var(--gold);
+  background: #4c2634;
   border: 1px solid var(--gold);
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  z-index: 20;
+  cursor: pointer;
 }
 
 #adminPanel {
@@ -336,12 +356,12 @@ footer {
   text-align: left;
 }
 
-#adminPanel h2 {
+#adminPanel h2,
+#adminPanel h3 {
   color: var(--gold);
 }
 
-#adminPanel input,
-#adminPanel select {
+#adminPanel input {
   display: block;
   width: 100%;
   padding: 12px;
@@ -355,7 +375,7 @@ footer {
   max-width: 550px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #a8875b;
+  border: 1px solid var(--gold);
 }
 
 .admin-actions {
@@ -374,20 +394,15 @@ footer {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-@media(max-width:500px) {
-  section { padding: 45px 15px; }
-  .intro-frame { padding: 40px 15px; }
-}
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC -->
-<audio id="music" src="music/song.mp3" loop></audio>
+<audio id="music" src="song.mp3" loop preload="auto"></audio>
 
-<!-- OPENING -->
+<!-- OPEN SCREEN -->
+
 <div id="intro">
   <div class="intro-frame">
     <div class="small-title">YOU ARE INVITED TO CELEBRATE</div>
@@ -402,6 +417,7 @@ footer {
 </div>
 
 <!-- INVITATION -->
+
 <main id="invitation" class="hidden">
 
   <div class="hero">
@@ -418,22 +434,10 @@ footer {
     <p>We would love to have you with us on our special day.</p>
 
     <div class="countdown">
-      <div class="count-box">
-        <strong id="days">00</strong>
-        <span>DAYS</span>
-      </div>
-      <div class="count-box">
-        <strong id="hours">00</strong>
-        <span>HOURS</span>
-      </div>
-      <div class="count-box">
-        <strong id="minutes">00</strong>
-        <span>MINUTES</span>
-      </div>
-      <div class="count-box">
-        <strong id="seconds">00</strong>
-        <span>SECONDS</span>
-      </div>
+      <div class="count-box"><strong id="days">00</strong><span>DAYS</span></div>
+      <div class="count-box"><strong id="hours">00</strong><span>HOURS</span></div>
+      <div class="count-box"><strong id="minutes">00</strong><span>MINUTES</span></div>
+      <div class="count-box"><strong id="seconds">00</strong><span>SECONDS</span></div>
     </div>
 
     <div class="calendar">
@@ -442,10 +446,8 @@ footer {
     </div>
 
     <a class="location-btn"
-       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Islam+%26+Radwa+Wedding&dates=20261214T160000Z/20261214T190000Z&details=Wedding+Celebration&location=Nady+Etihad+El+Shorta+-+Laylati+Hall"
-       target="_blank">
-       ADD TO CALENDAR
-    </a>
+    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Islam+%26+Radwa+Wedding&dates=20261214T160000Z/20261214T190000Z&location=Nady+Etihad+El+Shorta+Cairo+Egypt"
+    target="_blank">ADD TO CALENDAR</a>
   </section>
 
   <section>
@@ -459,12 +461,9 @@ footer {
       <div class="gold-line"></div>
       <p>Monday, December 14, 2026</p>
       <p>6:00 PM</p>
-
       <a class="location-btn"
-         href="https://www.google.com/maps/search/?api=1&query=Nady+Etihad+El+Shorta+Cairo+Egypt"
-         target="_blank">
-         VIEW LOCATION
-      </a>
+      href="https://www.google.com/maps/search/?api=1&query=Nady+Etihad+El+Shorta+Cairo+Egypt"
+      target="_blank">VIEW LOCATION</a>
     </div>
   </section>
 
@@ -472,11 +471,9 @@ footer {
     <div class="subtitle">OUR MEMORIES</div>
     <h2 class="section-title">Our Gallery</h2>
 
-    <div class="gallery" id="gallery">
-      <img src="images/photo1.jpg" alt="Our memory 1">
-      <img src="images/photo2.jpg" alt="Our memory 2">
-      <img src="images/photo3.jpg" alt="Our memory 3">
-      <img src="images/photo4.jpg" alt="Our memory 4">
+    <div class="gallery">
+      <img src="Photo2.jpg" alt="Islam and Radwa photo 1">
+      <img src="Photo3.jpg" alt="Islam and Radwa photo 2">
     </div>
   </section>
 
@@ -491,8 +488,7 @@ footer {
           <option value="Joyfully Accepts">Joyfully Accepts</option>
           <option value="Regretfully Declines">Regretfully Declines</option>
         </select>
-        <input id="guests" type="number" min="1" max="20"
-               value="1" placeholder="Number of Guests">
+        <input id="guests" type="number" min="1" max="20" value="1">
         <button type="submit">CONFIRM</button>
       </form>
       <p id="rsvpStatus"></p>
@@ -507,7 +503,7 @@ footer {
       <form onsubmit="addMessage(event)">
         <input id="guestName" placeholder="Your Name" required>
         <textarea id="guestMessage" rows="4"
-                  placeholder="Write your wishes..." required></textarea>
+        placeholder="Write your wishes..." required></textarea>
         <button type="submit">SEND WISHES</button>
       </form>
     </div>
@@ -524,69 +520,49 @@ footer {
 
 </main>
 
-<!-- ADMIN BUTTON -->
 <button class="admin-open" onclick="openAdmin()">⚙</button>
 
-<!-- ADMIN PANEL -->
 <div id="adminPanel" class="hidden">
   <div style="max-width:550px;margin:auto">
     <h2>Invitation Settings</h2>
-    <p>Customize your wedding invitation.</p>
 
     <div class="admin-group">
       <h3>Names & Details</h3>
-      <label>Names</label>
       <input id="editNames" value="Islam & Radwa">
-      <label>Wedding Date</label>
-      <input id="editDate" type="datetime-local"
-             value="2026-12-14T18:00">
-      <label>Venue</label>
+      <input id="editDate" type="datetime-local" value="2026-12-14T18:00">
       <input id="editVenue" value="Nady Etihad El Shorta – Laylati Hall">
-      <label>Google Maps URL</label>
       <input id="editMap" value="https://www.google.com/maps/search/?api=1&query=Nady+Etihad+El+Shorta+Cairo+Egypt">
     </div>
 
     <div class="admin-group">
-      <h3>Colors & Fonts</h3>
-      <label>Background Color</label>
+      <h3>Colors & Font</h3>
+      <label>Background</label>
       <input id="editBg" type="color" value="#241016">
-      <label>Gold Color</label>
+      <label>Gold</label>
       <input id="editGold" type="color" value="#d5b477">
-      <label>Burgundy Color</label>
-      <input id="editBurgundy" type="color" value="#501d30">
       <label>Font</label>
       <select id="editFont">
-        <option value="'Cormorant Garamond', serif">Cormorant Garamond</option>
-        <option value="Georgia, serif">Georgia</option>
-        <option value="Arial, sans-serif">Arial</option>
+        <option value="'Cormorant Garamond',serif">Cormorant Garamond</option>
+        <option value="Georgia,serif">Georgia</option>
+        <option value="Arial,sans-serif">Arial</option>
       </select>
     </div>
 
     <div class="admin-group">
       <h3>Photos</h3>
-      <p>Enter image URLs or paths.</p>
-      <input id="photo1" value="images/cover.jpg" placeholder="Cover image">
-      <input id="photo2" value="images/main.jpg" placeholder="Main image">
-      <input id="photo3" value="images/photo1.jpg">
-      <input id="photo4" value="images/photo2.jpg">
-      <input id="photo5" value="images/photo3.jpg">
-      <input id="photo6" value="images/photo4.jpg">
+      <input id="editPhoto2" value="Photo2.jpg">
+      <input id="editPhoto3" value="Photo3.jpg">
     </div>
 
     <div class="admin-group">
       <h3>Music</h3>
-      <input id="editMusic" value="music/song.mp3">
+      <input id="editMusic" value="song.mp3">
     </div>
 
     <div class="admin-actions">
       <button onclick="saveSettings()">SAVE CHANGES</button>
       <button onclick="closeAdmin()">CLOSE</button>
     </div>
-
-    <p style="color:#d5b477;font-size:13px">
-      Settings are saved in this browser. To publish changes,
-      update the files on GitHub.
-    </p>
   </div>
 </div>
 
@@ -599,17 +575,21 @@ function openInvitation() {
   $('intro').classList.add('hidden');
   $('invitation').classList.remove('hidden');
 
-  $('music').play().catch(() => {
-    alert('Tap the music control to start the music.');
+  const music = $('music');
+  music.volume = 0.7;
+  music.play().catch(() => {
+    console.log('Check the music file path and name.');
   });
 
   window.scrollTo(0,0);
 }
 
+/* COUNTDOWN */
+
 function updateCountdown() {
   const diff = weddingDate.getTime() - Date.now();
 
-  if (diff <= 0) {
+  if(diff <= 0) {
     ['days','hours','minutes','seconds'].forEach(id => $(id).textContent = '00');
     return;
   }
@@ -629,27 +609,30 @@ function buildCalendar() {
   const grid = $('calendar');
   grid.innerHTML = '';
 
-  ['SUN','MON','TUE','WED','THU','FRI','SAT'].forEach(d => {
-    const s = document.createElement('span');
-    s.className = 'day-name';
-    s.textContent = d;
-    grid.appendChild(s);
+  ['SUN','MON','TUE','WED','THU','FRI','SAT'].forEach(day => {
+    const span = document.createElement('span');
+    span.className = 'day-name';
+    span.textContent = day;
+    grid.appendChild(span);
   });
 
   const firstDay = new Date(2026,11,1).getDay();
-  const totalDays = 31;
 
   for(let i=0;i<firstDay;i++) {
     grid.appendChild(document.createElement('span'));
   }
 
-  for(let d=1;d<=totalDays;d++) {
-    const s = document.createElement('span');
-    s.textContent = d;
+  for(let d=1;d<=31;d++) {
+    const span = document.createElement('span');
 
-    if(d===14) s.className='wedding-day';
+    if(d===14) {
+      span.className = 'wedding-day';
+      span.innerHTML = '14<span class="heart">♥</span>';
+    } else {
+      span.textContent = d;
+    }
 
-    grid.appendChild(s);
+    grid.appendChild(span);
   }
 }
 
@@ -660,34 +643,33 @@ buildCalendar();
 function submitRSVP(e) {
   e.preventDefault();
 
-  const data = {
+  const list = JSON.parse(localStorage.getItem('rsvps') || '[]');
+
+  list.push({
     name: $('rsvpName').value,
     attendance: $('attendance').value,
     guests: $('guests').value
-  };
+  });
 
-  const list = JSON.parse(localStorage.getItem('rsvps') || '[]');
-  list.push(data);
   localStorage.setItem('rsvps',JSON.stringify(list));
 
   $('rsvpStatus').textContent = 'Thank you for your response!';
   e.target.reset();
 }
 
-/* GUESTBOOK */
+/* GUEST BOOK */
 
 function addMessage(e) {
   e.preventDefault();
 
-  const name = $('guestName').value.trim();
-  const message = $('guestMessage').value.trim();
-
   const list = JSON.parse(localStorage.getItem('wishes') || '[]');
 
-  list.unshift({name,message});
+  list.unshift({
+    name: $('guestName').value,
+    message: $('guestMessage').value
+  });
 
   localStorage.setItem('wishes',JSON.stringify(list));
-
   e.target.reset();
   showMessages();
 }
@@ -738,9 +720,8 @@ function loadSettings() {
 function saveSettings() {
   const ids = [
     'editNames','editDate','editVenue','editMap',
-    'editBg','editGold','editBurgundy','editFont',
-    'photo1','photo2','photo3','photo4','photo5','photo6',
-    'editMusic'
+    'editBg','editGold','editFont',
+    'editPhoto2','editPhoto3','editMusic'
   ];
 
   const settings = {};
@@ -751,7 +732,6 @@ function saveSettings() {
 
   document.documentElement.style.setProperty('--bg',settings.editBg);
   document.documentElement.style.setProperty('--gold',settings.editGold);
-  document.documentElement.style.setProperty('--burgundy',settings.editBurgundy);
 
   weddingDate = new Date(settings.editDate);
   updateCountdown();
@@ -764,27 +744,21 @@ function saveSettings() {
 
   document.querySelector('.location-card h3').textContent = settings.editVenue;
 
-  document.querySelector('.location-btn[href*="google"]').href = settings.editMap;
+  document.querySelector('.location-card .location-btn').href = settings.editMap;
+
+  const images = document.querySelectorAll('.gallery img');
+  images[0].src = settings.editPhoto2;
+  images[1].src = settings.editPhoto3;
 
   $('intro').style.backgroundImage =
-    `linear-gradient(#210c16aa,#210c16cc),url("${settings.photo1}")`;
+    `linear-gradient(#210c16bb,#210c16cc),url("${settings.editPhoto2}")`;
 
   document.querySelector('.hero').style.backgroundImage =
-    `linear-gradient(#200b15aa,#200b15bb),url("${settings.photo2}")`;
-
-  const gallery = $('gallery');
-  gallery.innerHTML = '';
-
-  ['photo3','photo4','photo5','photo6'].forEach(id => {
-    const img = document.createElement('img');
-    img.src = settings[id];
-    img.alt = 'Wedding photo';
-    gallery.appendChild(img);
-  });
+    `linear-gradient(#200b15aa,#200b15bb),url("${settings.editPhoto3}")`;
 
   $('music').src = settings.editMusic;
 
-  alert('Settings saved successfully!');
+  alert('Settings saved in this browser!');
 }
 </script>
 
