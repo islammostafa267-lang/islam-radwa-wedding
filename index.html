@@ -40,6 +40,25 @@ footer{padding:40px 15px;color:var(--gold)}
 #editor{display:none;position:fixed;inset:0;z-index:20;background:#1c1015;overflow:auto;padding:25px;text-align:left}
 #editor h2,#editor label{color:var(--gold)}
 #editor label{display:block;margin-top:12px}
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 10px;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
+  border: 1px solid #d5b477;
+  background: #1c1015;
+}
+</style>
 </style>
 </head>
 <body>
