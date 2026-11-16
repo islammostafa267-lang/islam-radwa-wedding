@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -219,6 +220,11 @@ textarea {
   margin-top: 10px;
 }
 
+.submit-btn:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
 .guest-message {
   border-bottom: 1px solid #78513f;
   padding: 15px;
@@ -229,6 +235,21 @@ textarea {
 .guest-message strong {
   color: #e5c58b;
   font-size: 20px;
+}
+
+.guest-message p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+#guestStatus {
+  color: #e5c58b;
+  margin-top: 15px;
+  font-size: 17px;
+}
+
+#guestMessages {
+  margin-top: 20px;
 }
 
 footer {
@@ -364,13 +385,26 @@ footer {
   </p>
 
   <form id="guestForm">
-    <input id="guestName" placeholder="Your Name" required>
-    <textarea id="guestText" placeholder="Write your wishes..." required></textarea>
+    <input
+      id="guestName"
+      placeholder="Your Name"
+      maxlength="80"
+      required
+    >
 
-    <button class="submit-btn" type="submit">
+    <textarea
+      id="guestText"
+      placeholder="Write your wishes..."
+      maxlength="500"
+      required
+    ></textarea>
+
+    <button class="submit-btn" id="guestSubmit" type="submit">
       SEND MESSAGE
     </button>
   </form>
+
+  <p id="guestStatus" aria-live="polite"></p>
 
   <div id="guestMessages"></div>
 </section>
@@ -382,8 +416,22 @@ footer {
 
 </div>
 
+<!-- Supabase Library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 
+// Supabase connection
+const SUPABASE_URL = "https://myomtzfonevcnmmnqxxn.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_kan6tSgiqD5c2bl-qUivuw_dva4kaFu";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+// Open invitation and play music
 function openInvitation() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("invitation").style.display = "block";
@@ -394,9 +442,10 @@ function openInvitation() {
     console.log("Music could not start:", error);
   });
 
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 }
 
+// RSVP
 document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -408,13 +457,35 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   this.reset();
 });
 
-function showMessages() {
-  const messages = JSON.parse(localStorage.getItem("weddingMessages") || "[]");
+// Load messages from Supabase
+async function showMessages() {
   const container = document.getElementById("guestMessages");
+  const status = document.getElementById("guestStatus");
+
+  status.textContent = "Loading messages...";
+
+  const { data, error } = await supabaseClient
+    .from("guest_messages")
+    .select("id, name, message, created_at")
+    .order("created_at", { ascending: false })
+    .limit(100);
+
+  if (error) {
+    console.error(error);
+    status.textContent = "Unable to load messages. Please try again.";
+    return;
+  }
 
   container.innerHTML = "";
 
-  messages.forEach(message => {
+  if (!data || data.length === 0) {
+    status.textContent = "Be the first to leave a message!";
+    return;
+  }
+
+  status.textContent = "";
+
+  data.forEach(message => {
     const item = document.createElement("div");
     item.className = "guest-message";
 
@@ -422,35 +493,60 @@ function showMessages() {
     name.textContent = message.name;
 
     const text = document.createElement("p");
-    text.textContent = message.text;
+    text.textContent = message.message;
 
     item.appendChild(name);
     item.appendChild(text);
+
     container.appendChild(item);
   });
 }
 
-document.getElementById("guestForm").addEventListener("submit", function(e) {
+// Submit a new message to Supabase
+document.getElementById("guestForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const name = document.getElementById("guestName").value;
-  const message = document.getElementById("guestText").value;
+  const name = document.getElementById("guestName").value.trim();
+  const message = document.getElementById("guestText").value.trim();
 
-  const messages = JSON.parse(localStorage.getItem("weddingMessages") || "[]");
+  const button = document.getElementById("guestSubmit");
+  const status = document.getElementById("guestStatus");
 
-  messages.unshift({
-    name: name,
-    text: message
-  });
+  if (!name || !message) {
+    status.textContent = "Please enter your name and message.";
+    return;
+  }
 
-  localStorage.setItem("weddingMessages", JSON.stringify(messages));
+  button.disabled = true;
+  button.textContent = "SENDING...";
+  status.textContent = "Sending your message...";
+
+  const { error } = await supabaseClient
+    .from("guest_messages")
+    .insert([
+      {
+        name: name,
+        message: message
+      }
+    ]);
+
+  button.disabled = false;
+  button.textContent = "SEND MESSAGE";
+
+  if (error) {
+    console.error(error);
+    status.textContent = "Sorry, your message could not be sent. Please try again.";
+    return;
+  }
 
   this.reset();
-  showMessages();
 
-  alert("Your message has been added. Thank you!");
+  status.textContent = "Your message has been sent successfully! ❤️";
+
+  await showMessages();
 });
 
+// Load messages when the page starts
 showMessages();
 
 </script>
