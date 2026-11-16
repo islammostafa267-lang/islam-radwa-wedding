@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Islam & Radwa | Wedding Studio</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#241019;color:#f8e9df;font-family:Georgia,serif;padding:20px}
+.container{max-width:600px;margin:auto}
+h1{text-align:center;color:#d8b779;font-size:32px}
+.subtitle{text-align:center;color:#d6bfc5}
+.card{background:#391c2b;border:1px solid #795064;border-radius:15px;padding:20px;margin:18px 0}
+h2{color:#d8b779;font-size:21px}
+label{display:block;margin-top:15px;margin-bottom:7px}
+input,select,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #987080;background:#f9eee9;color:#241019}
+button{width:100%;padding:14px;margin-top:15px;border:0;border-radius:8px;background:#d8b779;color:#241019;font-weight:bold}
+.preview{padding:25px;text-align:center;background:#241019;border:1px solid #d8b779;border-radius:12px;margin-top:15px}
+.preview h2{font-size:30px}
+.note{font-size:12px;color:#d6bfc5;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Islam & Radwa</h1>
+<p class="subtitle">Wedding Invitation Studio</p>
+
+<div class="card">
+<h2>💍 Couple Details</h2>
+<label>Groom Name</label>
+<input id="groom" value="Islam">
+<label>Bride Name</label>
+<input id="bride" value="Radwa">
+<label>Invitation Message</label>
+<textarea id="message">Two hearts, one beautiful story.</textarea>
+</div>
+
+<div class="card">
+<h2>🎨 Design Settings</h2>
+<label>Background Color</label>
+<input type="color" id="bg" value="#241019">
+<label>Gold Color</label>
+<input type="color" id="gold" value="#d8b779">
+<label>Font</label>
+<select id="font">
+<option value="Georgia">Georgia</option>
+<option value="Arial">Arial</option>
+<option value="serif">Classic Serif</option>
+<option value="cursive">Elegant Script</option>
+</select>
+</div>
+
+<div class="card">
+<h2>📸 Wedding Photos</h2>
+<label>Choose Photos</label>
+<input type="file" id="photos" accept="image/*" multiple>
+<p class="note">اختار الصور من موبايلك.</p>
+</div>
+
+<div class="card">
+<h2>🎵 Wedding Music</h2>
+<label>Choose Song</label>
+<input type="file" id="song" accept="audio/*">
+<p class="note">اختار الأغنية من ملفات الموبايل.</p>
+</div>
+
+<div class="card">
+<h2>📍 Wedding Location</h2>
+<label>Venue</label>
+<input id="venue" value="نادي اتحاد الشرطة - قاعة ليلتي">
+<label>Google Maps Link</label>
+<input id="location" placeholder="Paste Google Maps link">
+</div>
+
+<div class="card">
+<h2>👀 Live Preview</h2>
+<div class="preview" id="preview">
+<h2>Islam & Radwa</h2>
+<p>Two hearts, one beautiful story.</p>
+</div>
+<button onclick="saveSettings()">SAVE SETTINGS</button>
+</div>
+
+<p class="note">Islam & Radwa Wedding Studio ♡</p>
+</div>
+
+<script>
+const ids=['groom','bride','message','bg','gold','font','venue','location'];
+function updatePreview(){
+const g=document.getElementById('groom').value;
+const b=document.getElementById('bride').value;
+const m=document.getElementById('message').value;
+const bg=document.getElementById('bg').value;
+const gold=document.getElementById('gold').value;
+const font=document.getElementById('font').value;
+document.getElementById('preview').style.background=bg;
+document.getElementById('preview').style.fontFamily=font;
+document.getElementById('preview').style.color=gold;
+document.getElementById('preview').innerHTML=
+'<h2>'+g+' & '+b+'</h2><p>'+m+'</p>';
+}
+ids.forEach(id=>document.getElementById(id).addEventListener('input',updatePreview));
+function saveSettings(){
+const data={};
+ids.forEach(id=>data[id]=document.getElementById(id).value);
+localStorage.setItem('weddingSettings',JSON.stringify(data));
+alert('Settings saved on this device!');
+}
+updatePreview();
+</script>
+</body>
+</html>
